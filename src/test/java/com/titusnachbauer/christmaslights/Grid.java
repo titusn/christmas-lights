@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Grid {
-    private Boolean[] grid;
+    private final Boolean[] grid;
 
     public Grid(int x, int y) {
         grid = new Boolean[x*y];
