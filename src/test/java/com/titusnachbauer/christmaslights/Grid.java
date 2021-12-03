@@ -30,4 +30,8 @@ public class Grid {
     public void turnOff(int start, int end) {
         IntStream.rangeClosed(start,end).forEach(i -> grid[i] = false);
     }
+
+    public void toggle(int start, int end) {
+        IntStream.rangeClosed(start, end).forEach(i -> grid[i] = !grid[i]);
+    }
 }
