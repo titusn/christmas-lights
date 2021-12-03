@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DimmableGridTest {
+    DimmableGrid christmasGrid = new DimmableGrid(1000, 1000);
 
     @Test
     void GivenADimmableGridWhenInitializedTotalBrightnessShouldBeZero() {
@@ -12,16 +13,14 @@ class DimmableGridTest {
 
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTotalBrightnessShouldBe1Mln() {
-        DimmableGrid grid = new DimmableGrid(1000, 1000);
-        grid.turnOn(0, 999999);
-        Assertions.assertEquals(1000000, grid.calculateTotalBrightness());
+        christmasGrid.turnOn(0, 999999);
+        Assertions.assertEquals(1000000, christmasGrid.calculateTotalBrightness());
     }
 
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTwiceTotalBrightnessShouldBe2Mln() {
-        DimmableGrid grid = new DimmableGrid(1000, 1000);
-        grid.turnOn(0, 999999);
-        grid.turnOn(0, 999999);
-        Assertions.assertEquals(2000000, grid.calculateTotalBrightness());
+        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(0, 999999);
+        Assertions.assertEquals(2000000, christmasGrid.calculateTotalBrightness());
     }
 }
