@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class GridTest {
 
     @Test
-    void GivenAGridWhenInitializedAllLightsShouldBeOff () {
+    void GivenAGridWhenInitializedNoLightsShouldBeOn () {
         Grid grid = new Grid();
         Assertions.assertEquals(0 , grid.countLightsOn());
     }
