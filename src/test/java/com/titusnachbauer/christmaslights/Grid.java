@@ -26,4 +26,8 @@ public class Grid {
     public void turnOn(int start, int end) {
         IntStream.rangeClosed(start, end).forEach(i -> grid[i] = true);
     }
+
+    public void turnOff(int start, int end) {
+        IntStream.rangeClosed(start,end).forEach(i -> grid[i] = false);
+    }
 }
