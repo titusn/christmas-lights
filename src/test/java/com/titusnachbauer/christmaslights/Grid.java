@@ -7,7 +7,7 @@ public class Grid {
     private final Boolean[] grid;
 
     public Grid(int x, int y) {
-        grid = new Boolean[x*y];
+        grid = new Boolean[x * y];
         Arrays.fill(grid, false);
     }
 
@@ -28,7 +28,7 @@ public class Grid {
     }
 
     public void turnOff(int start, int end) {
-        IntStream.rangeClosed(start,end).forEach(i -> grid[i] = false);
+        IntStream.rangeClosed(start, end).forEach(i -> grid[i] = false);
     }
 
     public void toggle(int start, int end) {
