@@ -21,6 +21,17 @@ public class DimmableGrid extends Grid {
         IntStream.rangeClosed(start, end).forEach(i -> grid[i]++);
     }
 
+    @Override
+    public void turnOff(int start, int end) {
+        IntStream
+                .rangeClosed(start, end)
+                .forEach(i -> {
+                    if (grid[i] > 0) {
+                        grid[i]--;
+                    }
+                });
+    }
+
     public int calculateTotalBrightness() {
         return Arrays.stream(grid).reduce(0, Integer::sum);
     }
