@@ -14,10 +14,13 @@ public class Grid {
     }
 
     public int countLightsOn() {
-        return 0;
+        return x*y;
     }
 
     public int countLights() {
         return x*y;
+    }
+
+    public void turnOn(int start, int end) {
     }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GridTest {
+    Grid christmasGrid = new Grid(1000, 1000);
 
     @Test
     void GivenAGridWhenInitializedNoLightsShouldBeOn () {
@@ -18,9 +19,13 @@ class GridTest {
     }
 
     @Test
-    void GivenAThousandByThousandGridWhenInitializedItShouldContainAMillionLights () {
-        Grid grid = new Grid(1000, 1000);
-        assertEquals(1000000, grid.countLights());
+    void GivenAChristmasGridWhenInitializedItShouldContainAMillionLights () {
+        assertEquals(1000000, christmasGrid.countLights());
     }
 
+    @Test
+    void GivenAChristmasGridWhenAllCoordinatesAreTurnedOnAllLightsShouldBeOn () {
+        christmasGrid.turnOn(0,999999);
+        assertEquals(1000000, christmasGrid.countLightsOn());
+    }
 }
