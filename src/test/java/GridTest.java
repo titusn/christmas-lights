@@ -11,7 +11,7 @@ class GridTest {
     }
 
     @Test
-    void GivenATenByTenGridLightCountShouldBe100 () {
+    void GivenATenByTenGridItShouldContain100Lights () {
         Grid grid = new Grid(10, 10);
         Assertions.assertEquals(100, grid.countLights());
     }
