@@ -12,13 +12,13 @@ class GridTest {
     }
 
     @Test
-    void GivenATenByTenGridItShouldContain100Lights () {
+    void GivenATenByTenGridWhenInitializedItShouldContain100Lights () {
         Grid grid = new Grid(10, 10);
         assertEquals(100, grid.countLights());
     }
 
     @Test
-    void GivenAThousandByThousandGridItShouldContainAMillionLights () {
+    void GivenAThousandByThousandGridWhenInitializedItShouldContainAMillionLights () {
         Grid grid = new Grid(1000, 1000);
         assertEquals(1000000, grid.countLights());
     }
