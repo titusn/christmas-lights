@@ -1,12 +1,13 @@
 package com.titusnachbauer.christmaslights;
 
+import java.util.Arrays;
+
 public class Grid {
-    private int x;
-    private int y;
+    private Boolean[] grid;
 
     public Grid(int x, int y) {
-        this.x = x;
-        this.y = y;
+        grid = new Boolean[x*y];
+        Arrays.fill(grid, false);
     }
 
     public Grid() {
@@ -14,13 +15,22 @@ public class Grid {
     }
 
     public int countLightsOn() {
-        return x*y;
+        int count = 0;
+        for (Boolean lightOn : grid) {
+            if (lightOn) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public int countLights() {
-        return x*y;
+        return grid.length;
     }
 
     public void turnOn(int start, int end) {
+        for (int i = start; i <= end ; i++) {
+            grid[i] = true;
+        }
     }
 }
