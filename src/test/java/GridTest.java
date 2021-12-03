@@ -55,4 +55,18 @@ class GridTest {
         assertEquals(90, christmasGrid.countLightsOn());
     }
 
+    @Test
+    void GivenAChristmasGridWhenFollowingInstructionsThisIsTheAnswer() {
+        christmasGrid.turnOn(8879, 959629);
+        christmasGrid.turnOn(454398, 844448);
+        christmasGrid.turnOff(539243, 559965);
+        christmasGrid.turnOff(370819, 676868);
+        christmasGrid.turnOff(14540, 370997);
+        christmasGrid.turnOff(3013, 808453);
+        christmasGrid.turnOn(351678, 951908);
+        christmasGrid.toggle(720196, 897994);
+        christmasGrid.toggle(831394, 904860);
+
+        assertEquals(489888, christmasGrid.countLightsOn());
+    }
 }
