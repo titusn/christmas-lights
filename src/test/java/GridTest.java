@@ -16,4 +16,10 @@ class GridTest {
         Assertions.assertEquals(100, grid.countLights());
     }
 
+    @Test
+    void GivenAThousandByThousandGridItShouldContainAMillionLights () {
+        Grid grid = new Grid(1000, 1000);
+        Assertions.assertEquals(1000000, grid.countLights());
+    }
+
 }
