@@ -11,9 +11,17 @@ class DimmableGridTest {
     }
 
     @Test
-    void GivenADimmableChristmansGridWhenAllLightsAreTurnedOnTotalBrightnessShouldBe1Mln() {
+    void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTotalBrightnessShouldBe1Mln() {
         DimmableGrid grid = new DimmableGrid(1000, 1000);
         grid.turnOn(0, 999999);
         Assertions.assertEquals(1000000, grid.calculateTotalBrightness());
+    }
+
+    @Test
+    void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTwiceTotalBrightnessShouldBe2Mln() {
+        DimmableGrid grid = new DimmableGrid(1000, 1000);
+        grid.turnOn(0, 999999);
+        grid.turnOn(0, 999999);
+        Assertions.assertEquals(2000000, grid.calculateTotalBrightness());
     }
 }
