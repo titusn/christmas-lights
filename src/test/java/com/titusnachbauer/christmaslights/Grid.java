@@ -1,6 +1,7 @@
 package com.titusnachbauer.christmaslights;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Grid {
     private Boolean[] grid;
@@ -15,13 +16,7 @@ public class Grid {
     }
 
     public int countLightsOn() {
-        int count = 0;
-        for (Boolean lightOn : grid) {
-            if (lightOn) {
-                count++;
-            }
-        }
-        return count;
+        return (int) Arrays.stream(grid).filter(lightOn -> lightOn).count();
     }
 
     public int countLights() {
@@ -29,8 +24,6 @@ public class Grid {
     }
 
     public void turnOn(int start, int end) {
-        for (int i = start; i <= end ; i++) {
-            grid[i] = true;
-        }
+        IntStream.rangeClosed(start, end).forEach(i -> grid[i] = true);
     }
 }
