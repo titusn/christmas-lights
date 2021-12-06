@@ -17,4 +17,8 @@ public class Grid {
     public int count() {
         return x * y;
     }
+
+    public int countLightsOn() {
+        return 1;
+    }
 }

@@ -16,4 +16,10 @@ class GridTest {
         Assertions.assertEquals(1000000, christmasGrid.count());
     }
 
+    @Test
+    void GivenAChristmasGridWhenLightSwitchedOnItHasOneLightOn() {
+        Grid christmasGrid = new Grid(1000, 1000);
+        Assertions.assertEquals(1, christmasGrid.countLightsOn());
+    }
+
 }
