@@ -6,18 +6,18 @@ class GridTest {
     private final Grid christmasGrid = new Grid(1000, 1000);
 
     @Test
-    void GivenAGridWhenInitializedItHasZeroLights() {
+    void GivenGridWhenInitializedItHasZeroLights() {
         Grid grid = new Grid();
         Assertions.assertEquals(0, grid.count());
     }
 
     @Test
-    void GivenAChristmasGridWhenInitializedItHas1MlnLights() {
+    void GivenChristmasGridWhenInitializedItHas1MlnLights() {
         Assertions.assertEquals(1000000, christmasGrid.count());
     }
 
     @Test
-    void GivenAChristmasGridWhenLightSwitchedOnItHasOneLightOn() {
+    void GivenChristmasGridWhenLightSwitchedOnItHasOneLightOn() {
         Assertions.assertEquals(1, christmasGrid.countLightsOn());
     }
 
