@@ -18,7 +18,14 @@ class GridTest {
 
     @Test
     void GivenChristmasGridWhenLightSwitchedOnItHasOneLightOn() {
+        christmasGrid.turnOn(0, 0);
         Assertions.assertEquals(1, christmasGrid.countLightsOn());
+    }
+
+    @Test
+    void GivenChristmasGridWhenAllLightsSwitchedOnItHas1MlnLightsOn() {
+        christmasGrid.turnOn(0, 999999);
+        Assertions.assertEquals(1000000, christmasGrid.countLightsOn());
     }
 
 }
