@@ -6,12 +6,8 @@ import java.util.stream.IntStream;
 public class Grid {
 
     private final Boolean[] lights;
-    private final int x;
-    private final int y;
 
     public Grid(int x, int y) {
-        this.x = x;
-        this.y = y;
         lights = new Boolean[x * y];
         Arrays.fill(lights, false);
     }
@@ -21,7 +17,7 @@ public class Grid {
     }
 
     public int count() {
-        return x * y;
+        return lights.length;
     }
 
     public int countLightsOn() {
