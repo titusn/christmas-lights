@@ -8,7 +8,7 @@ public class Light {
     }
 
     public void turnOn() {
-        state = !state;
+        state = true;
     }
 
     public boolean isOn() {
@@ -17,5 +17,9 @@ public class Light {
 
     public void turnOff() {
         state = false;
+    }
+
+    public void toggle() {
+        state = !state;
     }
 }

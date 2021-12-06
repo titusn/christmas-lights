@@ -22,4 +22,24 @@ class LightTest {
         light.turnOff();
         Assertions.assertTrue(light.isOff());
     }
+
+    @Test
+    void GivenTurnedOnLightWhenTurnedOnItIsOn() {
+        light.turnOn();
+        light.turnOn();
+        Assertions.assertTrue(light.isOn());
+    }
+
+    @Test
+    void GivenTurnedOffLightWhenToggledItIsOn() {
+        light.toggle();
+        Assertions.assertTrue(light.isOn());
+    }
+
+    @Test
+    void GivenTurnedOnLightWhenToggledItIsOff() {
+        light.turnOn();
+        light.toggle();
+        Assertions.assertTrue(light.isOff());
+    }
 }
