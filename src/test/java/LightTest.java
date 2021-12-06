@@ -3,16 +3,23 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class LightTest {
+    Light light = new Light();
+
     @Test
     void GivenLightWhenInitializedItIsOff() {
-        Light light = new Light();
         Assertions.assertTrue(light.isOff());
     }
 
     @Test
     void GivenLightWhenTurnedOnItIsOn() {
-        Light light = new Light();
         light.turnOn();
         Assertions.assertTrue(light.isOn());
+    }
+
+    @Test
+    void GivenTurnedOnLightWhenTurnedOffItIsOff() {
+        light.turnOn();
+        light.turnOff();
+        Assertions.assertTrue(light.isOff());
     }
 }

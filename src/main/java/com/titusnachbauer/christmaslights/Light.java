@@ -14,4 +14,8 @@ public class Light {
     public boolean isOn() {
         return state;
     }
+
+    public void turnOff() {
+        state = false;
+    }
 }
