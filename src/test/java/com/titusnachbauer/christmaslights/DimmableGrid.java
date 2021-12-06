@@ -18,7 +18,9 @@ public class DimmableGrid extends Grid {
 
     @Override
     public void turnOn(int start, int end) {
-        IntStream.rangeClosed(start, end).forEach(i -> grid[i]++);
+        IntStream
+                .rangeClosed(start, end)
+                .forEach(i -> grid[i]++);
     }
 
     @Override
