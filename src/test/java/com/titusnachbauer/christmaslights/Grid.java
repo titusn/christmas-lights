@@ -32,4 +32,7 @@ public class Grid {
         IntStream.rangeClosed(start, end).forEach(i -> lights[i] = false);
     }
 
+    public void toggle(int start, int end) {
+        IntStream.rangeClosed(start, end).forEach(i -> lights[i] = !lights[i]);
+    }
 }

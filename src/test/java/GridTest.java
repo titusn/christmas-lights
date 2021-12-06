@@ -36,4 +36,9 @@ class GridTest {
         assertEquals(999999, christmasGrid.countLightsOn());
     }
 
+    @Test
+    void GivenChristmasGridWhenNoLightsTurnedOnAndTenToggledItHasTenLightsOn() {
+        christmasGrid.toggle(10, 19);
+        assertEquals(10, christmasGrid.countLightsOn());
+    }
 }
