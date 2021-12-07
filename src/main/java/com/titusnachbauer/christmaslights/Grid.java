@@ -5,14 +5,11 @@ import java.util.stream.IntStream;
 
 public class Grid {
 
-    private final Light[] newLights;
-    private final Boolean[] lights;
+    private final Light[] lights;
 
     public Grid(int x, int y) {
-        newLights = new Light[x * y];
-        Arrays.fill(newLights, new Light());
-        lights = new Boolean[x * y];
-        Arrays.fill(lights, false);
+        lights = new Light[x * y];
+        Arrays.setAll(lights, i -> new Light());
     }
 
     public Grid() {
@@ -20,22 +17,22 @@ public class Grid {
     }
 
     public int count() {
-        return newLights.length;
+        return lights.length;
     }
 
     public int countLightsOn() {
-        return (int) Arrays.stream(lights).filter(light -> light).count();
+        return (int) Arrays.stream(lights).filter(Light::isOn).count();
     }
 
     public void turnOn(int start, int end) {
-        IntStream.rangeClosed(start, end).forEach(i -> lights[i] = true);
+        IntStream.rangeClosed(start, end).forEach(i -> lights[i].turnOn());
     }
 
     public void turnOff(int start, int end) {
-        IntStream.rangeClosed(start, end).forEach(i -> lights[i] = false);
+        IntStream.rangeClosed(start, end).forEach(i -> lights[i].turnOff());
     }
 
     public void toggle(int start, int end) {
-        IntStream.rangeClosed(start, end).forEach(i -> lights[i] = !lights[i]);
+        IntStream.rangeClosed(start, end).forEach(i1 -> lights[i1].toggle());
     }
 }
