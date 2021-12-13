@@ -27,10 +27,10 @@ public class Grid {
         return lights.length;
     }
 
-    public void turnOn(int start, int end) {
+    public void turnOn(Coordinate start, Coordinate end) {
         IntStream
-                .rangeClosed(start, end)
-                .forEach(i -> lights[i].turnOn());
+                .rangeClosed(start.x(), end.x())
+                .forEach(x -> lights[x].turnOn());
     }
 
     public void turnOff(int start, int end) {

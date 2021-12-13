@@ -1,3 +1,4 @@
+import com.titusnachbauer.christmaslights.Coordinate;
 import com.titusnachbauer.christmaslights.DimmableGrid;
 import org.junit.jupiter.api.Test;
 
@@ -14,20 +15,20 @@ class DimmableGridTest {
 
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTotalBrightnessShouldBe1Mln() {
-        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
         assertEquals(1000000, christmasGrid.calculateTotalBrightness());
     }
 
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnTwiceTotalBrightnessShouldBe2Mln() {
-        christmasGrid.turnOn(0, 999999);
-        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
         assertEquals(2000000, christmasGrid.calculateTotalBrightness());
     }
 
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnOnceAndTurnedOffOnceTotalBrightnessShouldBeZero() {
-        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
         christmasGrid.turnOff(0, 999999);
         assertEquals(0, christmasGrid.calculateTotalBrightness());
     }

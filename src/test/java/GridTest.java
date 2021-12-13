@@ -20,19 +20,19 @@ class GridTest {
 
     @Test
     void GivenChristmasGridWhenLightTurnedOnItHasOneLightOn() {
-        christmasGrid.turnOn(0, 0);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(0, 0));
         assertEquals(1, christmasGrid.countLightsOn());
     }
 
     @Test
     void GivenChristmasGridWhenAllLightsTurnedOnItHas1MlnLightsOn() {
-        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
         assertEquals(1000000, christmasGrid.countLightsOn());
     }
 
     @Test
     void GivenChristmasGridWhenAllLightsTurnedOnAndOneTurnedOffItHas999999LightsOn() {
-        christmasGrid.turnOn(0, 999999);
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
         christmasGrid.turnOff(999999, 999999);
         assertEquals(999999, christmasGrid.countLightsOn());
     }
