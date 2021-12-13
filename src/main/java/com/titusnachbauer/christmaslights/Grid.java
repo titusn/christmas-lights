@@ -15,6 +15,10 @@ public class Grid {
         this(0, 0);
     }
 
+    public Grid(Coordinate coordinate) {
+        this(coordinate.x(), coordinate.y());
+    }
+
     public int countLightsOn() {
         return (int) Arrays.stream(lights).filter(Light::isOn).count();
     }

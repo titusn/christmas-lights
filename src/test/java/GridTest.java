@@ -1,10 +1,11 @@
+import com.titusnachbauer.christmaslights.Coordinate;
 import com.titusnachbauer.christmaslights.Grid;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GridTest {
-    private final Grid christmasGrid = new Grid(1000, 1000);
+    private final Grid christmasGrid = new Grid(new Coordinate(1000, 1000));
 
     @Test
     void GivenGridWhenInitializedItHasZeroLights() {
