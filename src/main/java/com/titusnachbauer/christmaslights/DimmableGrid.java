@@ -24,12 +24,12 @@ public class DimmableGrid extends Grid {
     }
 
     @Override
-    public void turnOff(int start, int end) {
+    public void turnOff(Coordinate start, Coordinate end) {
         IntStream
-                .rangeClosed(start, end)
-                .forEach(i -> {
-                    if (grid[i] > 0) {
-                        grid[i]--;
+                .rangeClosed(start.x(), end.x())
+                .forEach(x -> {
+                    if (grid[x] > 0) {
+                        grid[x]--;
                     }
                 });
     }

@@ -29,7 +29,7 @@ class DimmableGridTest {
     @Test
     void GivenADimmableChristmasGridWhenAllLightsAreTurnedOnOnceAndTurnedOffOnceTotalBrightnessShouldBeZero() {
         christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
-        christmasGrid.turnOff(0, 999999);
+        christmasGrid.turnOff(new Coordinate(0, 0), new Coordinate(999999, 999999));
         assertEquals(0, christmasGrid.calculateTotalBrightness());
     }
 

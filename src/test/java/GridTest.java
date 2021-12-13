@@ -33,7 +33,7 @@ class GridTest {
     @Test
     void GivenChristmasGridWhenAllLightsTurnedOnAndOneTurnedOffItHas999999LightsOn() {
         christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999999, 999999));
-        christmasGrid.turnOff(999999, 999999);
+        christmasGrid.turnOff(new Coordinate(999999, 999999), new Coordinate(999999, 999999));
         assertEquals(999999, christmasGrid.countLightsOn());
     }
 
