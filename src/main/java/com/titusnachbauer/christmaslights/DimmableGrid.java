@@ -35,10 +35,10 @@ public class DimmableGrid extends Grid {
     }
 
     @Override
-    public void toggle(int start, int end) {
+    public void toggle(Coordinate start, Coordinate end) {
         IntStream
-                .rangeClosed(start, end)
-                .forEach(i -> grid[i] += 2);
+                .rangeClosed(start.x(), end.x())
+                .forEach(x -> grid[x] += 2);
     }
 
     public int calculateTotalBrightness() {

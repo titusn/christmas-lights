@@ -39,9 +39,9 @@ public class Grid {
                 .forEach(x -> lights[x].turnOff());
     }
 
-    public void toggle(int start, int end) {
+    public void toggle(Coordinate start, Coordinate end) {
         IntStream
-                .rangeClosed(start, end)
-                .forEach(i -> lights[i].toggle());
+                .rangeClosed(start.x(), end.x())
+                .forEach(x -> lights[x].toggle());
     }
 }

@@ -39,7 +39,7 @@ class GridTest {
 
     @Test
     void GivenChristmasGridWhenNoLightsTurnedOnAndTenToggledItHasTenLightsOn() {
-        christmasGrid.toggle(10, 19);
+        christmasGrid.toggle(new Coordinate(10, 0), new Coordinate(19, 0));
         assertEquals(10, christmasGrid.countLightsOn());
     }
 }

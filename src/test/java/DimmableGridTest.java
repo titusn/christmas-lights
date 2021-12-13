@@ -35,7 +35,7 @@ class DimmableGridTest {
 
     @Test
     void GivenADimmableChristmasGridWhenTwoLightsAreToggledTotalBrightnessShouldBeFour() {
-        christmasGrid.toggle(0, 1);
+        christmasGrid.toggle(new Coordinate(0, 0), new Coordinate(1, 0));
         assertEquals(4, christmasGrid.calculateTotalBrightness());
     }
 }
