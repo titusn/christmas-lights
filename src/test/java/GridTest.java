@@ -48,4 +48,17 @@ class GridTest {
         christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(1, 1));
         assertEquals(4, christmasGrid.countLightsOn());
     }
+
+    @Test
+    void GivenFullyLitChristmasGridWhenTwoByTwoLightsTurnedOffThen999996LightsAreOn() {
+        christmasGrid.turnOn(new Coordinate(0, 0), new Coordinate(999, 999));
+        christmasGrid.turnOff(new Coordinate(998, 998), new Coordinate(999, 999));
+        assertEquals(999996, christmasGrid.countLightsOn());
+    }
+
+    @Test
+    void GivenChristmasGridWhen100By100LightsAreToggledThen10000LightsAreOn() {
+        christmasGrid.toggle(new Coordinate(100, 100), new Coordinate(199, 199));
+        assertEquals(10000, christmasGrid.countLightsOn());
+    }
 }
