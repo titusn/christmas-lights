@@ -23,7 +23,7 @@ public class Grid {
     }
 
     public int count() {
-        return lights.length;
+        return newLights.length;
     }
 
     public void turnOn(int start, int end) {
