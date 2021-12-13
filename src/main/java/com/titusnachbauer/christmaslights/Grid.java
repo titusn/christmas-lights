@@ -5,10 +5,13 @@ import java.util.stream.IntStream;
 
 public class Grid {
     private final Boolean[] lights;
+    private final Light[] newLights;
 
     public Grid(int x, int y) {
         lights = new Boolean[x * y];
         Arrays.fill(lights, false);
+        newLights = new Light[x * y];
+        Arrays.setAll(newLights, light -> new Light());
     }
 
     public Grid() {
