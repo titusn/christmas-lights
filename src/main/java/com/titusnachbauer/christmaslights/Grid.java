@@ -19,7 +19,7 @@ public class Grid {
         return (int) Arrays.stream(lights).filter(lightOn -> lightOn).count();
     }
 
-    public int countLights() {
+    public int count() {
         return lights.length;
     }
 
