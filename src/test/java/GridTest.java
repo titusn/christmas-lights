@@ -61,4 +61,19 @@ class GridTest {
         christmasGrid.toggle(new Coordinate(100, 100), new Coordinate(199, 199));
         assertEquals(10000, christmasGrid.countLightsOn());
     }
+
+    @Test
+    void GivenAChristmasGridWhenFollowingInstructionsThisIsTheAnswer() {
+        christmasGrid.turnOn(new Coordinate(887, 9), new Coordinate(959, 629));
+        christmasGrid.turnOn(new Coordinate(454, 398), new Coordinate(844, 448));
+        christmasGrid.turnOff(new Coordinate(539, 243), new Coordinate(559, 965));
+        christmasGrid.turnOff(new Coordinate(370, 819), new Coordinate(676, 868));
+        christmasGrid.turnOff(new Coordinate(145, 40), new Coordinate(370, 997));
+        christmasGrid.turnOff(new Coordinate(301, 3), new Coordinate(808, 453));
+        christmasGrid.turnOn(new Coordinate(351, 678), new Coordinate(951, 908));
+        christmasGrid.toggle(new Coordinate(720, 196), new Coordinate(897, 994));
+        christmasGrid.toggle(new Coordinate(831, 394), new Coordinate(904, 860));
+
+        assertEquals(230022, christmasGrid.countLightsOn());
+    }
 }
