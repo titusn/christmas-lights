@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class DimmableGrid extends Grid {
-    private final DimmableLight[] newGrid;
+    private final DimmableLight[] grid;
 
     public DimmableGrid(int x, int y) {
         super(x, y);
-        newGrid = new DimmableLight[x * y];
-        Arrays.setAll(newGrid, current -> new DimmableLight());
+        grid = new DimmableLight[x * y];
+        Arrays.setAll(grid, current -> new DimmableLight());
     }
 
     public DimmableGrid() {
@@ -20,24 +20,24 @@ public class DimmableGrid extends Grid {
     public void turnOn(Coordinate start, Coordinate end) {
         IntStream
                 .rangeClosed(start.x(), end.x())
-                .forEach(x -> newGrid[x].turnOn());
+                .forEach(x -> grid[x].turnOn());
     }
 
     @Override
     public void turnOff(Coordinate start, Coordinate end) {
         IntStream
                 .rangeClosed(start.x(), end.x())
-                .forEach(x -> newGrid[x].turnOff());
+                .forEach(x -> grid[x].turnOff());
     }
 
     @Override
     public void toggle(Coordinate start, Coordinate end) {
         IntStream
                 .rangeClosed(start.x(), end.x())
-                .forEach(x -> newGrid[x].toggle());
+                .forEach(x -> grid[x].toggle());
     }
 
     public int calculateTotalBrightness() {
-        return Arrays.stream(newGrid).reduce(0, (partialResult, light) -> partialResult + light.getIntensity(), Integer::sum);
+        return Arrays.stream(grid).reduce(0, (partialResult, light) -> partialResult + light.getIntensity(), Integer::sum);
     }
 }
