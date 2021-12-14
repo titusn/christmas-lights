@@ -36,4 +36,10 @@ class DimmableLightTest {
         dimmableLight.turnOff();
         assertTrue(dimmableLight.isOff());
     }
+
+    @Test
+    void GivenTurnedOffDimmableLightWhenToggledThenIntensityIsTwo() {
+        dimmableLight.toggle();
+        assertEquals(2, dimmableLight.getIntensity());
+    }
 }

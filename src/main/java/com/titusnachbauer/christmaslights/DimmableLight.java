@@ -22,4 +22,9 @@ public class DimmableLight extends Light {
             super.turnOff();
         }
     }
+
+    @Override
+    public void toggle() {
+        intensity += 2;
+    }
 }
