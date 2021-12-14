@@ -15,7 +15,11 @@ public class DimmableLight extends Light {
 
     @Override
     public void turnOff() {
-        super.turnOff();
-        intensity--;
+        if (intensity > 0) {
+            intensity--;
+        }
+        if (intensity == 0) {
+            super.turnOff();
+        }
     }
 }
