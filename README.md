@@ -4,9 +4,8 @@ Based on https://kata-log.rocks/christmas-lights-kata
 
 ## TODO
 
-- A newly created light grid should have 0 lights
-- A newly created Christmas light grid should have 1000000 lights in a 1000 by 1000 grid
-- On a newly created Christmas light grid all lights should be off
+V A newly created light grid should have 0 lights V A newly created Christmas light grid should have 1000000 lights in a
+1000 by 1000 grid V On a newly created Christmas light grid all lights should be off
 - After turning on all lights on a Christmas light grid 1000000 lights should be on
 - After turning on all lights and turning off one light 999999 lights should be on
 - After toggling 10 lights, 10 lights should be on
